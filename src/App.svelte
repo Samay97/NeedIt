@@ -3,37 +3,23 @@
     import { ModeWatcher } from "mode-watcher";
     import Home from "./views/Home.svelte";
     import Settings from "./views/Settings.svelte";
-    import { initializeApp } from "firebase/app";
-    import { getAnalytics } from "firebase/analytics";
-
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
-    const firebaseConfig = {
-        apiKey: "AIzaSyCCrFB6dX0nF5Zw9CFvx29bhAWGHYQN8f0",
-        authDomain: "needit-57cbb.firebaseapp.com",
-        projectId: "needit-57cbb",
-        storageBucket: "needit-57cbb.firebasestorage.app",
-        messagingSenderId: "212137337906",
-        appId: "1:212137337906:web:ce70a791ebdbc97e7a082b",
-        measurementId: "G-SMQ12FXZ82",
-    };
-
-    // Initialize Firebase
-    const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    console.log(app.name);
-    console.log(analytics.app.name);
+    import Login from "./views/Login.svelte";
+    import { user, logout } from "./stores/authStore";
 
     const routes: RouteConfig[] = [
-        {
-            component: Home,
-        },
-        {
-            path: "settings",
-            component: Settings,
-        },
+        { path: "/", component: Home },
+        { path: "settings", component: Settings },
+        { path: "login", component: Login },
     ];
 </script>
+
+<!-- TODO: Logout in Menu einbauen -->
+<header class="flex justify-between bg-gray-800 p-4 text-white">
+    <h1 class="text-lg font-bold">NeedIt</h1>
+    {#if $user}
+        <button class="rounded bg-red-500 px-4 py-2" on:click={logout}>Logout</button>
+    {/if}
+</header>
 
 <ModeWatcher />
 <Router {routes} />

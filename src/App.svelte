@@ -14,10 +14,10 @@
 </script>
 
 <!-- TODO: Logout in Menu einbauen -->
-<header class="bg-gray-800 text-white p-4 flex justify-between">
+<header class="flex justify-between bg-gray-800 p-4 text-white">
     <h1 class="text-lg font-bold">NeedIt</h1>
     {#if $user}
-        <button class="bg-red-500 px-4 py-2 rounded" on:click={logout}>Logout</button>
+        <button class="rounded bg-red-500 px-4 py-2" on:click={logout}>Logout</button>
     {/if}
 </header>
 

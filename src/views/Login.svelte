@@ -1,5 +1,10 @@
 <script lang="ts">
-    import { getAuth, GoogleAuthProvider, signInWithPopup, onAuthStateChanged } from "firebase/auth";
+    import {
+        getAuth,
+        GoogleAuthProvider,
+        signInWithPopup,
+        onAuthStateChanged,
+    } from "firebase/auth";
     import { goto } from "@mateothegreat/svelte5-router";
     import { onMount } from "svelte";
 
@@ -26,9 +31,9 @@
     }
 </script>
 
-<main class="flex flex-col items-center justify-center h-screen">
-    <h1 class="text-2xl font-bold mb-4">Login</h1>
-    <button class="bg-blue-500 text-white px-4 py-2 rounded" on:click={loginWithGoogle}>
+<main class="flex h-screen flex-col items-center justify-center">
+    <h1 class="mb-4 text-2xl font-bold">Login</h1>
+    <button class="rounded bg-blue-500 px-4 py-2 text-white" on:click={loginWithGoogle}>
         Mit Google anmelden
     </button>
 </main>

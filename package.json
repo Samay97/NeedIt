@@ -9,7 +9,8 @@
         "build": "vite build",
         "preview": "vite preview",
         "format": "prettier --write .",
-        "lint": ""
+        "format:check": "prettier --check .",
+        "lint": "eslint"
     },
     "dependencies": {
         "@lucide/svelte": "^0.483.0",

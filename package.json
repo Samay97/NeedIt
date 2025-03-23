@@ -33,6 +33,7 @@
     },
     "dependencies": {
         "@lucide/svelte": "^0.483.0",
+        "@mateothegreat/svelte5-router": "^2.14.0",
         "mode-watcher": "^0.5.1"
     }
 }

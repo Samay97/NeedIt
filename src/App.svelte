@@ -1,19 +1,19 @@
 <script lang="ts">
-    import { Button } from "$lib/components/ui/button/index.js";
-    import Moon from "@lucide/svelte/icons/moon";
-    import Sun from "@lucide/svelte/icons/sun";
-    import { ModeWatcher, toggleMode } from "mode-watcher";
+    import { Router, type RouteConfig } from "@mateothegreat/svelte5-router";
+    import { ModeWatcher } from "mode-watcher";
+    import Home from "./views/Home.svelte";
+    import Settings from "./views/Settings.svelte";
+
+    const routes: RouteConfig[] = [
+        {
+            component: Home,
+        },
+        {
+            path: "settings",
+            component: Settings,
+        },
+    ];
 </script>
 
 <ModeWatcher />
-<div class="p-4">
-    <Button onclick={toggleMode} variant="outline" size="icon">
-        <Sun
-            class="h-[1.2rem] w-[1.2rem] rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0"
-        />
-        <Moon
-            class="absolute h-[1.2rem] w-[1.2rem] rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100"
-        />
-        <span class="sr-only">Toggle theme</span>
-    </Button>
-</div>
+<Router {routes} />

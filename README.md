@@ -13,3 +13,4 @@
 - New components can be checkout from [shadcn-svelte](https://next.shadcn-svelte.com/docs/)
 - Tailwind docs are [here](https://tailwindcss.com/docs/)
 - Icons are from [lucide.dev](https://lucide.dev/)
+- Router docs are [here](https://github.com/mateothegreat/svelte5-router/tree/main/docs)
